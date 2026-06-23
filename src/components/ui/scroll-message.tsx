@@ -77,8 +77,7 @@ export const ScrollMessage = () => {
   return (
     <div
       className={cn(
-        "fixed bottom-4 left-1/2 transform -translate-x-1/2 z-[100] transition-all duration-700 ease-in-out",
-        "w-[300px] h-[250px] md:w-[400px] md:h-[300px]",
+        "relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] transition-all duration-700 ease-in-out hidden lg:block flex-shrink-0",
         isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-12 scale-90 pointer-events-none"
       )}
     >

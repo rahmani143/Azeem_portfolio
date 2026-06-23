@@ -1,5 +1,8 @@
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { Navbar } from "@/components/ui/navbar";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { FlowHoverButton } from "@/components/ui/flow-hover-button";
+import { ScrollMessage } from "@/components/ui/scroll-message";
 import { SocialSidebar } from "@/components/ui/social-sidebar";
 import { BackgroundLayer } from "@/components/ui/background-layer";
 import { TechStackMarquee } from "@/components/ui/tech-stack-marquee";
@@ -80,8 +83,8 @@ export default function Home() {
         <section id="hero" className="relative w-full min-h-screen flex flex-col pt-0 bg-transparent">
           <TechStackMarquee />
           
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-grow flex items-center mt-12 pb-24">
-            <div className="max-w-3xl">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-grow flex flex-col lg:flex-row items-center justify-between mt-12 pb-24 gap-8">
+            <div className="max-w-3xl w-full">
               <h2 className="text-[#0080ff] dark:text-[#00f0ff] font-mono mb-4 text-lg">Hi, my name is</h2>
               <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-4 text-black dark:text-white">
                 Ibrahim Azeem Mohammed.
@@ -101,6 +104,9 @@ export default function Home() {
                 </a>
               </div>
             </div>
+            
+            {/* 3D Cloud Message on the side */}
+            <ScrollMessage />
           </div>
         </section>
 
