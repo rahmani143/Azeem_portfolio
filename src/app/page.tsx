@@ -201,14 +201,14 @@ export default function Home() {
               <div className="relative pl-8">
                 <div className="absolute w-4 h-4 bg-white dark:bg-black border-2 border-gray-400 dark:border-[#333] rounded-full -left-[9px] top-1"></div>
                 <h3 className="text-xl font-bold text-black dark:text-white">CTO & Co-founder</h3>
-                <p className="text-[#0080ff] dark:text-[#00f0ff] font-mono text-sm mb-4">Drishti OS • Present</p>
+                <p className="text-[#0080ff] dark:text-[#00f0ff] font-mono text-sm mb-4">Drishti • Present</p>
                 <p className="text-gray-600 dark:text-gray-400">Leading the architectural design and deployment of an autonomous CV operating system.</p>
               </div>
 
               <div className="relative pl-8">
                 <div className="absolute w-4 h-4 bg-white dark:bg-black border-2 border-gray-400 dark:border-[#333] rounded-full -left-[9px] top-1"></div>
                 <h3 className="text-xl font-bold text-black dark:text-white">Research Intern</h3>
-                <p className="text-[#0080ff] dark:text-[#00f0ff] font-mono text-sm mb-4">KFUPM • Previous</p>
+                <p className="text-[#0080ff] dark:text-[#00f0ff] font-mono text-sm mb-4">KFUPM • May 2025 - July 2025</p>
                 <p className="text-gray-600 dark:text-gray-400">Engineered asynchronous Python pipelines for real-time processing of massive hyperspectral data arrays.</p>
               </div>
               
