@@ -5,12 +5,6 @@ import { motion } from "framer-motion";
 
 const certifications = [
   {
-    title: "Machine Learning Beginner",
-    issuer: "Kaggle",
-    date: "Sep 2024",
-    skills: ["Machine Learning"],
-  },
-  {
     title: "Certified in Pandas (Python Data Analysis Library)",
     issuer: "Kaggle",
     date: "Jul 2025",
@@ -39,12 +33,6 @@ const certifications = [
     issuer: "LinkedIn",
     date: "Apr 2025",
     skills: ["Small Business Financial Management"],
-  },
-  {
-    title: "Certified Digital Circuit Designer",
-    issuer: "National Institute of Technology, Tiruchirappalli",
-    date: "Feb 2025",
-    skills: ["Digital Circuit Design"],
   },
 ];
 
