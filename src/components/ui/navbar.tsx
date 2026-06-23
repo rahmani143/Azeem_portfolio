@@ -6,11 +6,11 @@ import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { FlowHoverButton } from "@/components/ui/flow-hover-button";
 
 const NavLink = ({ href, children, hasNotification = false }: { href: string, children: React.ReactNode, hasNotification?: boolean }) => (
-  <a href={href} className="pointer-events-auto h-12 bg-white/70 dark:bg-black/40 backdrop-blur-md border border-gray-200/50 dark:border-white/10 rounded-full px-6 flex items-center justify-center shadow-lg hover:shadow-xl hover:border-[#0080ff]/30 dark:hover:border-[#00f0ff]/30 transition-all duration-300 group transform hover:-translate-y-1">
-    <span className="relative text-xs font-semibold text-gray-600 dark:text-gray-300 group-hover:text-[#0080ff] dark:group-hover:text-[#00f0ff] transition-all duration-300 group-hover:scale-110 tracking-widest uppercase inline-block">
+  <a href={href} className="pointer-events-auto h-10 xl:h-12 bg-white/70 dark:bg-black/40 backdrop-blur-md border border-gray-200/50 dark:border-white/10 rounded-full px-3 xl:px-5 flex items-center justify-center shadow-lg hover:shadow-xl hover:border-[#0080ff]/30 dark:hover:border-[#00f0ff]/30 transition-all duration-300 group transform hover:-translate-y-1">
+    <span className="relative text-[10px] xl:text-xs font-semibold text-gray-600 dark:text-gray-300 group-hover:text-[#0080ff] dark:group-hover:text-[#00f0ff] transition-all duration-300 group-hover:scale-110 tracking-wider uppercase inline-block whitespace-nowrap">
       {children}
       {hasNotification && (
-        <span className="absolute -top-1 -right-3 w-2 h-2 bg-[#0080ff] dark:bg-[#00f0ff] rounded-full shadow-[0_0_8px_rgba(0,128,255,0.8)] dark:shadow-[0_0_8px_rgba(0,240,255,0.8)] animate-pulse"></span>
+        <span className="absolute -top-1 -right-2 w-2 h-2 bg-[#0080ff] dark:bg-[#00f0ff] rounded-full shadow-[0_0_8px_rgba(0,128,255,0.8)] dark:shadow-[0_0_8px_rgba(0,240,255,0.8)] animate-pulse"></span>
       )}
     </span>
   </a>
@@ -20,7 +20,7 @@ export const Navbar = () => {
   return (
     <header className="fixed top-0 inset-x-0 z-50 py-6 pointer-events-none">
       {/* Container with space-between to push logo left and resume right */}
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex justify-between items-center gap-4 flex-wrap">
+      <div className="w-full max-w-7xl mx-auto px-4 flex justify-between items-center gap-2 flex-nowrap overflow-x-auto no-scrollbar">
         
         {/* Left: Brand Logo */}
         <div className="flex-shrink-0">
@@ -50,7 +50,7 @@ export const Navbar = () => {
         </div>
 
         {/* Center: Navigation Menu (Separate Pills) */}
-        <div className="hidden md:flex items-center gap-3 lg:gap-4">
+        <div className="hidden lg:flex items-center gap-1.5 xl:gap-3 flex-shrink">
           <NavLink href="#about">About</NavLink>
           <NavLink href="#work">Work</NavLink>
           <NavLink href="#achievements">Achievements</NavLink>
