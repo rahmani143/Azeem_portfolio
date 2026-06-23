@@ -188,12 +188,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CAREER & EDUCATION SECTION (Translucent) */}
-        <section id="education" className="relative w-full py-32 bg-white/40 dark:bg-transparent backdrop-blur-2xl dark:backdrop-blur-none">
+        {/* CAREER SECTION (Translucent) */}
+        <section id="career" className="relative w-full py-32 bg-white/40 dark:bg-transparent backdrop-blur-2xl dark:backdrop-blur-none">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white font-mono">
-                <span className="text-[#0080ff] dark:text-[#00f0ff]">04.</span> Career & Education
+                <span className="text-[#0080ff] dark:text-[#00f0ff]">04.</span> Career
               </h2>
               <div className="h-px bg-gray-200 dark:bg-[#222] flex-grow ml-6"></div>
             </div>
@@ -213,6 +213,21 @@ export default function Home() {
                 <p className="text-[#0080ff] dark:text-[#00f0ff] font-mono text-sm mb-4">KFUPM • May 2025 - July 2025</p>
                 <p className="text-gray-600 dark:text-gray-400">Engineered asynchronous Python pipelines for real-time processing of massive hyperspectral data arrays.</p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* EDUCATION SECTION (Solid) */}
+        <section id="education" className="relative w-full py-32 bg-white dark:bg-transparent">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white font-mono">
+                <span className="text-[#0080ff] dark:text-[#00f0ff]">05.</span> Education
+              </h2>
+              <div className="h-px bg-gray-200 dark:bg-[#222] flex-grow ml-6"></div>
+            </div>
+
+            <div className="relative border-l border-gray-300 dark:border-[#333] ml-4 md:ml-0 space-y-12 pb-8">
               
               <div className="relative pl-8">
                 <div className="absolute w-4 h-4 bg-white dark:bg-black border-2 border-gray-400 dark:border-[#333] rounded-full -left-[9px] top-1"></div>
@@ -236,7 +251,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white font-mono">
-                <span className="text-[#0080ff] dark:text-[#00f0ff]">05.</span> Skills & Technologies
+                <span className="text-[#0080ff] dark:text-[#00f0ff]">06.</span> Skills & Technologies
               </h2>
               <div className="h-px bg-gray-200 dark:bg-[#222] flex-grow ml-6"></div>
             </div>

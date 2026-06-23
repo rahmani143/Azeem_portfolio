@@ -54,6 +54,7 @@ export const Navbar = () => {
           <NavLink href="#about">About</NavLink>
           <NavLink href="#work">Work</NavLink>
           <NavLink href="#achievements">Achievements</NavLink>
+          <NavLink href="#career">Career</NavLink>
           <NavLink href="#education">Education</NavLink>
           <NavLink href="#contact" hasNotification={true}>Contact</NavLink>
         </div>
