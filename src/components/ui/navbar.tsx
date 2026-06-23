@@ -90,11 +90,15 @@ export const Navbar = () => {
           </div>
 
           {/* Resume */}
-          <div className="hidden sm:block pointer-events-auto shadow-lg rounded-full overflow-hidden">
-            <FlowHoverButton as="a" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-              Resume
-            </FlowHoverButton>
-          </div>
+          <FlowHoverButton 
+            as="a" 
+            href="/resume.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hidden sm:flex pointer-events-auto shadow-lg"
+          >
+            Resume
+          </FlowHoverButton>
         </div>
 
       </div>
