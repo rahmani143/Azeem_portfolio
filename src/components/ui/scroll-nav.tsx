@@ -22,12 +22,12 @@ export const ScrollNav = () => {
       const sectionElements = sections.map(s => document.getElementById(s.id)).filter(Boolean);
       let currentSection = sections[0].id;
 
-      // Find which section covers the vertical center of the screen
+      // Find which section is currently active
       sectionElements.forEach(el => {
         if (!el) return;
         const rect = el.getBoundingClientRect();
-        // If the top is above or at the middle, and bottom is below the middle
-        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+        // If the top of the section has passed the middle of the screen (plus a buffer)
+        if (rect.top <= window.innerHeight / 2 + 100) {
             currentSection = el.id;
         }
       });
