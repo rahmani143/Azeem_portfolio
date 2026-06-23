@@ -36,6 +36,7 @@ export const Preloader = () => {
           exit={{ opacity: 0, scale: 1.1, filter: "blur(10px)" }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#050505]"
+        >
           {/* Rotating Logo Container */}
           <motion.div
             animate={{ rotate: 360 }}
