@@ -15,7 +15,7 @@ const techStacks: TechItem[] = [
 
 export const TechStackMarquee = () => {
   return (
-    <div className="w-full relative overflow-hidden pt-24 pb-8 border-b border-black/5 dark:border-white/5 z-20 bg-transparent">
+    <div className="w-full relative overflow-hidden pt-[110px] pb-8 border-b border-black/5 dark:border-white/5 z-20 bg-transparent">
       <div className="relative flex w-full overflow-hidden">
         <div className="animate-marquee flex whitespace-nowrap">
           {techStacks.map((tech) => (
