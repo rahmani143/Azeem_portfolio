@@ -16,7 +16,7 @@ const skillCategories = [
   },
   {
     title: "Backend & Web Frameworks",
-    skills: ["Asyncio", "Pathway"],
+    skills: ["Next.js", "Tailwind CSS", "Asyncio", "Pathway"],
     className: "lg:col-span-1",
   },
   {

@@ -11,6 +11,9 @@ const techStacks: TechItem[] = [
   { id: "numpy", name: "NumPy", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" },
   { id: "tensorflow", name: "TensorFlow", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" },
   { id: "opencv", name: "OpenCV", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" },
+  { id: "nextjs", name: "Next.js", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg", className: "dark:invert" },
+  { id: "tailwindcss", name: "Tailwind CSS", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+  { id: "yolov8", name: "YOLOv8", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" },
 ];
 
 export const TechStackMarquee = () => {
@@ -33,9 +36,7 @@ export const TechStackMarquee = () => {
           ))}
         </div>
         
-        {/* Gradients for smooth fade on edges */}
-        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-gray-50 dark:from-[#030303] to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-gray-50 dark:from-[#030303] to-transparent z-10 pointer-events-none"></div>
+        {/* Removed Gradients */}
       </div>
     </div>
   );
