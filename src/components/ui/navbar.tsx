@@ -92,10 +92,10 @@ export const Navbar = () => {
           {/* Resume */}
           <FlowHoverButton 
             as="a" 
-            href="/resume.pdf" 
+            href="https://github.com/rahmani143/Azeem_portfolio/blob/main/public/resume.pdf" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="hidden sm:flex pointer-events-auto shadow-lg"
+            className="hidden sm:flex pointer-events-auto shadow-lg z-[100]"
           >
             Resume
           </FlowHoverButton>
