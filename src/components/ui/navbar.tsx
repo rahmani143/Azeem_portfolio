@@ -91,7 +91,7 @@ export const Navbar = () => {
 
           {/* Resume */}
           <div className="hidden sm:block pointer-events-auto shadow-lg rounded-full overflow-hidden">
-            <FlowHoverButton onClick={() => window.open('/resume.pdf', '_blank')}>
+            <FlowHoverButton as="a" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
               Resume
             </FlowHoverButton>
           </div>
