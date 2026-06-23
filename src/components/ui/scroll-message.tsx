@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Html, Float } from "@react-three/drei";
+import { OrbitControls, Html, Float, Clouds, Cloud, Text } from "@react-three/drei";
 import * as THREE from "three";
 
 // A simple 3D fluffy cloud made of spheres
@@ -13,44 +13,46 @@ const CloudMesh = () => {
   useFrame((state, delta) => {
     if (groupRef.current) {
       // Auto-rotate the cloud slowly
-      groupRef.current.rotation.y += delta * 0.2;
+      groupRef.current.rotation.y += delta * 0.1;
     }
   });
 
   return (
     <group ref={groupRef}>
       <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
-        <group scale={1.5}>
-          {/* Cloud puffs */}
-          <mesh position={[-0.8, -0.2, 0]}>
-            <sphereGeometry args={[0.6, 32, 32]} />
-            <meshStandardMaterial color="#0080ff" transparent opacity={0.8} roughness={0.1} />
-          </mesh>
-          <mesh position={[0.8, -0.2, 0]}>
-            <sphereGeometry args={[0.6, 32, 32]} />
-            <meshStandardMaterial color="#00f0ff" transparent opacity={0.8} roughness={0.1} />
-          </mesh>
-          <mesh position={[0, 0.3, 0]}>
-            <sphereGeometry args={[0.8, 32, 32]} />
-            <meshStandardMaterial color="#ffffff" transparent opacity={0.9} roughness={0.1} />
-          </mesh>
-          <mesh position={[0, -0.2, 0.5]}>
-            <sphereGeometry args={[0.5, 32, 32]} />
-            <meshStandardMaterial color="#e0f7ff" transparent opacity={0.9} roughness={0.1} />
-          </mesh>
-          <mesh position={[0, -0.2, -0.5]}>
-            <sphereGeometry args={[0.5, 32, 32]} />
-            <meshStandardMaterial color="#e0f7ff" transparent opacity={0.9} roughness={0.1} />
-          </mesh>
+        <group scale={0.8}>
+          {/* Volumetric Clouds from drei */}
+          <Clouds material={THREE.MeshLambertMaterial} limit={400}>
+            <Cloud segments={40} bounds={[6, 2, 2]} volume={12} color="#ffffff" opacity={0.8} />
+            <Cloud seed={1} scale={1.5} volume={8} color="#e0f7ff" opacity={0.6} position={[0, 0, -1]} fade={10} />
+            <Cloud seed={2} scale={1.5} volume={8} color="#cceeff" opacity={0.6} position={[0, 0, 1]} fade={10} />
+          </Clouds>
           
-          {/* Floating HTML Text pinned to the cloud */}
-          <Html center distanceFactor={8}>
-            <div className="w-max bg-white/20 dark:bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/30 pointer-events-none select-none">
-              <p className="text-sm md:text-base font-bold text-black dark:text-white tracking-wide whitespace-nowrap drop-shadow-md">
-                Looking forward to making it better.. ✨
-              </p>
-            </div>
-          </Html>
+          {/* Stylish 3D Text pinned to the cloud */}
+          <Text
+            position={[0, 0.4, 2.5]}
+            fontSize={0.6}
+            color="#0080ff"
+            anchorX="center"
+            anchorY="middle"
+            outlineWidth={0.03}
+            outlineColor="#ffffff"
+            font="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff"
+          >
+            Looking forward
+          </Text>
+          <Text
+            position={[0, -0.4, 2.5]}
+            fontSize={0.5}
+            color="#0080ff"
+            anchorX="center"
+            anchorY="middle"
+            outlineWidth={0.02}
+            outlineColor="#ffffff"
+            font="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff"
+          >
+            to making it better..
+          </Text>
         </group>
       </Float>
     </group>
