@@ -37,14 +37,18 @@ export const Preloader = () => {
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#050505]"
         >
+          {/* Static Glowing Background Aura to replace laggy drop-shadow */}
+          <div className="absolute inset-0 m-auto w-[40vw] max-w-[300px] aspect-square bg-[#0080ff] dark:bg-[#00f0ff] rounded-full blur-[100px] opacity-40 dark:opacity-30"></div>
+
           {/* Rotating Logo Container */}
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 4, ease: "linear", repeat: Infinity }}
-            className="absolute flex items-center justify-center w-[90vw] max-w-[700px] aspect-square"
+            className="absolute flex items-center justify-center w-[90vw] max-w-[700px] aspect-square will-change-transform"
+            style={{ transform: "translateZ(0)" }}
           >
             <svg
-              className="w-full h-full drop-shadow-[0_0_50px_rgba(0,128,255,0.6)] dark:drop-shadow-[0_0_50px_rgba(0,240,255,0.6)] opacity-80"
+              className="w-full h-full opacity-80"
               viewBox="0 0 100 100"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
