@@ -18,29 +18,33 @@ export const ScrollNav = () => {
   const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sectionElements = sections.map(s => document.getElementById(s.id)).filter(Boolean);
-      let currentSection = sections[0].id;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Find the entry that is currently intersecting the center viewport band
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        root: null,
+        // The intersection band is the middle 20% of the screen
+        rootMargin: "-40% 0px -40% 0px",
+        threshold: 0
+      }
+    );
 
-      // Find which section is currently active
-      sectionElements.forEach(el => {
-        if (!el) return;
-        const rect = el.getBoundingClientRect();
-        // If the top of the section has passed the middle of the screen (plus a buffer)
-        if (rect.top <= window.innerHeight / 2 + 100) {
-            currentSection = el.id;
-        }
-      });
-      
-      setActiveSection(currentSection);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    // Run once on mount to set initial state
-    handleScroll();
+    // Observe all section elements
+    sections.forEach((s) => {
+      const el = document.getElementById(s.id);
+      if (el) {
+        observer.observe(el);
+      }
+    });
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
     };
   }, []);
 

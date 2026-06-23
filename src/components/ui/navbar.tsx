@@ -44,7 +44,7 @@ export const Navbar = () => {
       )}
     >
       {/* Container with space-between to push logo left and resume right */}
-      <div className="w-full max-w-7xl mx-auto px-4 flex justify-between items-center gap-2 flex-nowrap overflow-x-auto no-scrollbar">
+      <div className="w-full max-w-7xl mx-auto px-4 flex justify-between items-center gap-2 flex-nowrap">
         
         {/* Left: Brand Logo */}
         <div className="flex-shrink-0">
