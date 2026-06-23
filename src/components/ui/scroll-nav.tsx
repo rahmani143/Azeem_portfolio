@@ -8,9 +8,10 @@ const sections = [
   { id: "about", label: "01. About" },
   { id: "work", label: "02. Work" },
   { id: "achievements", label: "03. Achievements" },
-  { id: "education", label: "04. Education" },
-  { id: "skills", label: "05. Skills" },
-  { id: "contact", label: "06. Contact" },
+  { id: "career", label: "04. Career" },
+  { id: "education", label: "05. Education" },
+  { id: "skills", label: "06. Skills" },
+  { id: "contact", label: "07. Contact" },
 ];
 
 export const ScrollNav = () => {
