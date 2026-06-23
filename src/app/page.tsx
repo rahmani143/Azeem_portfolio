@@ -2,7 +2,6 @@ import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { Navbar } from "@/components/ui/navbar";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { FlowHoverButton } from "@/components/ui/flow-hover-button";
-import { ScrollMessage } from "@/components/ui/scroll-message";
 import { SocialSidebar } from "@/components/ui/social-sidebar";
 import { BackgroundLayer } from "@/components/ui/background-layer";
 import { TechStackMarquee } from "@/components/ui/tech-stack-marquee";
@@ -104,9 +103,6 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            
-            {/* 3D Cloud Message on the side */}
-            <ScrollMessage />
           </div>
         </section>
 

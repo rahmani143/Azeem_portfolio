@@ -53,6 +53,7 @@ export const Navbar = () => {
         <div className="hidden md:flex items-center gap-3 lg:gap-4">
           <NavLink href="#about">About</NavLink>
           <NavLink href="#work">Work</NavLink>
+          <NavLink href="#achievements">Achievements</NavLink>
           <NavLink href="#education">Education</NavLink>
           <NavLink href="#contact" hasNotification={true}>Contact</NavLink>
         </div>
