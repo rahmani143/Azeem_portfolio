@@ -1,26 +1,48 @@
 @import "tailwindcss";
+@custom-variant dark (&:is(.dark *, .glsl *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: #00f0ff;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  width: max-content;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-fog-1 {
+  animation: fog 60s linear infinite;
+}
+
+.animate-fog-2 {
+  animation: fog 40s linear infinite;
+}
+
+@keyframes fog {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50vw); }
+}
+
+/* Ensure text is extremely readable over the video background in 3D mode */
+[data-theme="glsl"] main {
+  text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.9);
 }

@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Begin: ritual init — scaffolded skill dirs (regenerated on every init)
+.gemini/skills/ritual/
+.github/skills/ritual/
+# End: ritual init
