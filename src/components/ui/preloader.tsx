@@ -9,8 +9,8 @@ export const Preloader = () => {
   useEffect(() => {
     // Wait for the window to completely load, or use a minimum timeout to ensure it shows beautifully
     const handleLoad = () => {
-      // Add a slight delay to ensure all assets (like 3D canvas) have breathing room
-      setTimeout(() => setIsLoading(false), 800);
+      // Add a slight delay to ensure all assets have breathing room
+      setTimeout(() => setIsLoading(false), 300);
     };
 
     if (document.readyState === "complete") {
