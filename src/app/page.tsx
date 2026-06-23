@@ -33,11 +33,11 @@ const allProjects = [
   },
   {
     id: 3,
-    title: "Eco Mender Bot",
-    subtitle: "Autonomous Environmental Robot",
-    description: "A mobile robotics platform built for strict hardware execution constraints. The software utilizes frequency scaling and custom PWM generation for precise motor actuation, bypassing standard high-level libraries.",
-    badges: ["ROS2", "Gazebo", "RViz2", "C++"],
-    latencyMetric: "20% responsiveness gain",
+    title: "KrishiCobot (KC)",
+    subtitle: "e-Yantra Robotics Competition, IIT Bombay",
+    description: "A cooperative multi-robot smart farming system pairing a mobile UGV with a 6-DOF UR5 robotic arm in Gazebo. Implemented custom state synchronization over ROS 2 for collision-free autonomous navigation, LiDAR crop monitoring, and precise real-time image processing for spoilage detection.",
+    badges: ["ROS 2", "Gazebo", "OpenCV", "MoveIt 2", "Nav2"],
+    latencyMetric: "Multi-Robot Orchestration",
     primaryLink: "#",
   },
   {
