@@ -23,9 +23,10 @@ const CloudMesh = () => {
         <group scale={0.8}>
           {/* Volumetric Clouds from drei */}
           <Clouds material={THREE.MeshLambertMaterial} limit={400}>
-            <Cloud segments={40} bounds={[6, 2, 2]} volume={12} color="#ffffff" opacity={0.8} />
-            <Cloud seed={1} scale={1.5} volume={8} color="#e0f7ff" opacity={0.6} position={[0, 0, -1]} fade={10} />
-            <Cloud seed={2} scale={1.5} volume={8} color="#cceeff" opacity={0.6} position={[0, 0, 1]} fade={10} />
+            {/* Using uniform bounds like [4,4,4] instead of [6,2,2] removes the 'box' cut-off edges */}
+            <Cloud segments={60} bounds={[3, 3, 3]} volume={10} color="#ffffff" opacity={0.4} position={[-0.5, 0, 0]} fade={50} />
+            <Cloud seed={1} scale={1.5} bounds={[4, 4, 4]} volume={12} color="#e0f7ff" opacity={0.3} position={[0.5, 0.5, -1]} fade={50} />
+            <Cloud seed={2} scale={1.5} bounds={[3, 3, 3]} volume={10} color="#cceeff" opacity={0.3} position={[0, -0.5, 1]} fade={50} />
           </Clouds>
           
           {/* Stylish 3D Text pinned to the cloud */}
