@@ -18,34 +18,31 @@ export const ScrollNav = () => {
   const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // Find the entry that is currently intersecting the center viewport band
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+    const handleScroll = () => {
+      // Use offsetTop instead of getBoundingClientRect for bulletproof tracking
+      // We check if the section's top is above the middle of the screen
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      
+      let current = sections[0].id;
+      
+      for (const s of sections) {
+        const el = document.getElementById(s.id);
+        if (el) {
+          // If the section's absolute top is less than our scroll position
+          if (el.offsetTop <= scrollPosition) {
+            current = s.id;
           }
-        });
-      },
-      {
-        root: null,
-        // The intersection band is the middle 20% of the screen
-        rootMargin: "-40% 0px -40% 0px",
-        threshold: 0
+        }
       }
-    );
-
-    // Observe all section elements
-    sections.forEach((s) => {
-      const el = document.getElementById(s.id);
-      if (el) {
-        observer.observe(el);
-      }
-    });
-
-    return () => {
-      observer.disconnect();
+      
+      setActiveSection(current);
     };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Run after a short delay to ensure DOM is painted
+    setTimeout(handleScroll, 100);
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleClick = (id: string) => {

@@ -201,7 +201,7 @@ export default function Home() {
             <div className="relative border-l border-gray-300 dark:border-[#333] ml-4 md:ml-0 space-y-12 pb-8">
               
               <div className="relative pl-8">
-                <div className="absolute w-4 h-4 bg-white dark:bg-black border-2 border-gray-400 dark:border-[#333] rounded-full -left-[9px] top-1"></div>
+                <div className="absolute w-4 h-4 bg-[#0080ff] dark:bg-[#00f0ff] rounded-full -left-[9px] top-1 shadow-[0_0_10px_rgba(0,128,255,0.8)] dark:shadow-[0_0_10px_rgba(0,240,255,0.8)] animate-pulse border-2 border-white dark:border-[#0a0a0a] z-10"></div>
                 <h3 className="text-xl font-bold text-black dark:text-white">CTO & Co-founder</h3>
                 <p className="text-[#0080ff] dark:text-[#00f0ff] font-mono text-sm mb-4">Drishti • Present</p>
                 <p className="text-gray-600 dark:text-gray-400">Leading the architectural design and deployment of an autonomous CV operating system.</p>
@@ -230,7 +230,7 @@ export default function Home() {
             <div className="relative border-l border-gray-300 dark:border-[#333] ml-4 md:ml-0 space-y-12 pb-8">
               
               <div className="relative pl-8">
-                <div className="absolute w-4 h-4 bg-white dark:bg-black border-2 border-gray-400 dark:border-[#333] rounded-full -left-[9px] top-1"></div>
+                <div className="absolute w-4 h-4 bg-[#0080ff] dark:bg-[#00f0ff] rounded-full -left-[9px] top-1 shadow-[0_0_10px_rgba(0,128,255,0.8)] dark:shadow-[0_0_10px_rgba(0,240,255,0.8)] animate-pulse border-2 border-white dark:border-[#0a0a0a] z-10"></div>
                 <h3 className="text-xl font-bold text-black dark:text-white">B.Tech in Electronics and Communication Engineering (ECE)</h3>
                 <p className="text-[#0080ff] dark:text-[#00f0ff] font-mono text-sm mb-4">National Institute of Technology, Warangal • Expected 2027</p>
                 <p className="text-gray-600 dark:text-gray-400">Bridging the gap between silicon architecture and advanced software engineering.</p>
