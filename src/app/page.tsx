@@ -17,10 +17,10 @@ const allProjects = [
     id: 1,
     title: "Drishti OS",
     subtitle: "Computer Vision Operating System",
-    description: "A multi-task deep learning pipeline featuring YOLOv8, ArcFace, and OCR modules for simultaneous facial recognition and anomaly identification. The custom weapon detection model achieved a 95% Mean Average Precision under varying illumination and occlusion levels.",
+    description: "Deployed multi-task deep learning pipelines (YOLOv8, ArcFace, OCR) for facial recognition and anomaly identification. Trained a custom weapon detection model achieving a 95% mAP50 under varying illumination. Optimized inference for restricted hardware, cutting latency by 50% (to 150ms) and keeping RAM under 2GB.",
     badges: ["Python", "YOLOv8", "OpenCV", "ArcFace"],
-    latencyMetric: "150ms per-frame",
-    primaryLink: "#",
+    latencyMetric: "May 2026 - Present",
+    primaryLink: "https://github.com/rahmani143",
   },
   {
     id: 2,
@@ -43,11 +43,11 @@ const allProjects = [
   {
     id: 4,
     title: "Brother",
-    subtitle: "Agent-Enabled Routine Manager",
-    description: "A local voice-activated scheduling system that automates daily routine management. The software processes natural language commands to execute dynamic task prioritization using scheduling heuristics.",
+    subtitle: "Smart Voice-Activated Task Scheduler",
+    description: "Developed a voice-activated scheduling system using Python to automate routine management. Integrated the Google ADK to process natural language voice commands and execute dynamic task prioritization using ASAP, ALAP heuristics. Engineered a persistent local SQLite database to track roadmaps and execution logs.",
     badges: ["Python", "SQLite", "Google ADK"],
-    latencyMetric: "Persistent local logging",
-    primaryLink: "#",
+    latencyMetric: "Oct 2025 - Nov 2025",
+    primaryLink: "https://github.com/rahmani143",
   },
   {
     id: 5,
@@ -211,8 +211,12 @@ export default function Home() {
               <div className="relative pl-8">
                 <div className="absolute w-4 h-4 bg-white dark:bg-black border-2 border-gray-400 dark:border-[#333] rounded-full -left-[9px] top-1"></div>
                 <h3 className="text-xl font-bold text-black dark:text-white">Research Intern</h3>
-                <p className="text-[#0080ff] dark:text-[#00f0ff] font-mono text-sm mb-4">KFUPM • May 2025 - July 2025</p>
-                <p className="text-gray-600 dark:text-gray-400">Engineered asynchronous Python pipelines for real-time processing of massive hyperspectral data arrays.</p>
+                <p className="text-[#0080ff] dark:text-[#00f0ff] font-mono text-sm mb-4">King Fahd University of Petroleum and Minerals (KFUPM) • Dhahran, Saudi Arabia • May 2025 - July 2025</p>
+                <div className="text-gray-600 dark:text-gray-400 space-y-2 text-sm leading-relaxed">
+                  <p>• Developed an asynchronous Python pipeline for hyperspectral datasets, reducing runtime exceptions by 30%.</p>
+                  <p>• Designed a cross-platform GUI for data ingestion thereby increasing throughput by 15%.</p>
+                  <p>• Built image validation testing suites for hardware-software modules to verify real-time interface stability.</p>
+                </div>
               </div>
             </div>
           </div>
