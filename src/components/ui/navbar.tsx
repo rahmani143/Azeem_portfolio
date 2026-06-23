@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { FlowHoverButton } from "@/components/ui/flow-hover-button";
@@ -17,8 +17,32 @@ const NavLink = ({ href, children, hasNotification = false }: { href: string, ch
 );
 
 export const Navbar = () => {
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      // Vanish when scrolling down past 50px, reappear when scrolling up
+      if (currentScrollY > 50 && currentScrollY > lastScrollY.current) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 inset-x-0 z-50 py-6 pointer-events-none">
+    <header 
+      className={cn(
+        "fixed top-0 inset-x-0 z-[100] py-6 pointer-events-none transition-all duration-500 ease-in-out",
+        isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+      )}
+    >
       {/* Container with space-between to push logo left and resume right */}
       <div className="w-full max-w-7xl mx-auto px-4 flex justify-between items-center gap-2 flex-nowrap overflow-x-auto no-scrollbar">
         
