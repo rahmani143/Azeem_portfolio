@@ -90,15 +90,17 @@ export const Navbar = () => {
           </div>
 
           {/* Resume */}
-          <FlowHoverButton 
-            as="a" 
-            href="https://github.com/rahmani143/Azeem_portfolio/blob/main/public/resume.pdf" 
-            target="_blank" 
+          {/* Resume */}
+          <a
+            href="/resume.pdf"
+            target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:flex pointer-events-auto shadow-lg z-[100]"
+            className="hidden sm:flex pointer-events-auto relative cursor-pointer z-[100] items-center justify-center gap-2 overflow-hidden rounded-full border border-gray-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 px-6 py-3 font-bold text-black dark:text-zinc-200 transition-all duration-500 hover:scale-105 hover:text-white dark:hover:text-black active:scale-95 uppercase tracking-wider text-xs shadow-lg group"
           >
-            Resume
-          </FlowHoverButton>
+            {/* The sweeping background animation */}
+            <div className="absolute inset-0 -z-10 translate-x-[150%] translate-y-[150%] scale-[2.5] rounded-[100%] bg-[#0080ff] dark:bg-[#00f0ff] transition-transform duration-1000 group-hover:translate-x-[0%] group-hover:translate-y-[0%]"></div>
+            <span>Resume</span>
+          </a>
         </div>
 
       </div>
