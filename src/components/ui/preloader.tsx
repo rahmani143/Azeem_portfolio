@@ -41,10 +41,10 @@ export const Preloader = () => {
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 4, ease: "linear", repeat: Infinity }}
-            className="absolute flex items-center justify-center w-[70vw] max-w-[500px] aspect-square"
+            className="absolute flex items-center justify-center w-[90vw] max-w-[700px] aspect-square"
           >
             <svg
-              className="w-full h-full drop-shadow-[0_0_50px_rgba(0,128,255,0.6)] dark:drop-shadow-[0_0_50px_rgba(0,240,255,0.6)]"
+              className="w-full h-full drop-shadow-[0_0_50px_rgba(0,128,255,0.6)] dark:drop-shadow-[0_0_50px_rgba(0,240,255,0.6)] opacity-80"
               viewBox="0 0 100 100"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -63,9 +63,9 @@ export const Preloader = () => {
           
           {/* Centered text over the spinning logo */}
           <motion.div 
-            animate={{ opacity: [0.4, 1, 0.4] }}
+            animate={{ opacity: [0.6, 1, 0.6] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="relative z-10 font-mono text-sm md:text-xl font-bold tracking-[0.4em] text-white dark:text-black uppercase drop-shadow-md"
+            className="relative z-10 bg-[#050505]/80 backdrop-blur-sm px-6 py-3 rounded-full border border-[#0080ff]/30 dark:border-[#00f0ff]/30 font-mono text-sm md:text-xl font-bold tracking-[0.4em] text-[#0080ff] dark:text-[#00f0ff] uppercase shadow-[0_0_20px_rgba(0,0,0,0.8)]"
           >
             INITIALIZATION
           </motion.div>
