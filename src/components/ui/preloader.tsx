@@ -9,8 +9,8 @@ export const Preloader = () => {
   useEffect(() => {
     // Wait for the window to completely load, or use a minimum timeout to ensure it shows beautifully
     const handleLoad = () => {
-      // Add a slight delay to ensure all assets have breathing room
-      setTimeout(() => setIsLoading(false), 300);
+      // Add a longer delay so the logo has time to gracefully rotate before vanishing
+      setTimeout(() => setIsLoading(false), 1200);
     };
 
     if (document.readyState === "complete") {
@@ -20,7 +20,7 @@ export const Preloader = () => {
     }
 
     // Fallback just in case load event fails or already fired
-    const fallbackTimer = setTimeout(handleLoad, 2500);
+    const fallbackTimer = setTimeout(handleLoad, 3500);
 
     return () => {
       window.removeEventListener("load", handleLoad);
@@ -43,7 +43,7 @@ export const Preloader = () => {
           {/* Rotating Logo Container */}
           <motion.div
             animate={{ rotate: 360 }}
-            transition={{ duration: 4, ease: "linear", repeat: Infinity }}
+            transition={{ duration: 8, ease: "linear", repeat: Infinity }}
             className="absolute flex items-center justify-center w-[90vw] max-w-[700px] aspect-square will-change-transform"
             style={{ transform: "translateZ(0)" }}
           >
