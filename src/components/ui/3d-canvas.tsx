@@ -27,6 +27,7 @@ const AbstractMesh = () => {
 
   return (
     <Icosahedron ref={meshRef} args={[1.5, 2]}>
+      {/* TODO: Any suggestions on how to make this 3D effect more realistic or interactive? Let me know! */}
       <meshBasicMaterial color={meshColor} wireframe={true} transparent opacity={meshOpacity} />
     </Icosahedron>
   );
