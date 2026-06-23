@@ -39,7 +39,7 @@ export const SocialSidebar = () => {
           </svg>
         </a>
       </div>
-      <div className="w-px h-24 bg-gradient-to-b from-gray-300 dark:from-gray-500 to-transparent mt-4"></div>
+      <div className="w-px h-10 bg-gradient-to-b from-gray-300 dark:from-gray-500 to-transparent mt-4"></div>
     </div>
   );
 };
