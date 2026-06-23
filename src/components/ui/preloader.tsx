@@ -39,13 +39,13 @@ export const Preloader = () => {
         >
           {/* Rotating Logo Container */}
           <motion.div
-            animate={{ rotateY: 360 }}
+            animate={{ rotate: 360 }}
             transition={{ duration: 2, ease: "linear", repeat: Infinity }}
-            className="relative h-24 w-24 rounded-2xl bg-[#0080ff] dark:bg-[#00f0ff] flex items-center justify-center shadow-2xl shadow-[#0080ff]/40 dark:shadow-[#00f0ff]/40"
+            className="relative h-40 w-40 rounded-3xl bg-[#0080ff] dark:bg-[#00f0ff] flex items-center justify-center shadow-[0_0_40px_rgba(0,128,255,0.4)] dark:shadow-[0_0_40px_rgba(0,240,255,0.4)]"
           >
             <svg
-              width="56"
-              height="56"
+              width="80"
+              height="80"
               viewBox="0 0 100 100"
               fill="none"
               stroke="#fff"
