@@ -2,7 +2,9 @@
 
 import React from "react";
 
-const techStacks = [
+type TechItem = { id: string; name: string; image: string; className?: string };
+
+const techStacks: TechItem[] = [
   { id: "html5", name: "HTML5", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
   { id: "css3", name: "CSS3", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" },
   { id: "python", name: "Python", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
