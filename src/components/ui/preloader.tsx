@@ -40,22 +40,23 @@ export const Preloader = () => {
           {/* Rotating Logo Container */}
           <motion.div
             animate={{ rotate: 360 }}
-            transition={{ duration: 2, ease: "linear", repeat: Infinity }}
-            className="relative h-40 w-40 rounded-3xl bg-[#0080ff] dark:bg-[#00f0ff] flex items-center justify-center shadow-[0_0_40px_rgba(0,128,255,0.4)] dark:shadow-[0_0_40px_rgba(0,240,255,0.4)]"
+            transition={{ duration: 4, ease: "linear", repeat: Infinity }}
+            className="relative flex items-center justify-center text-[#0080ff] dark:text-[#00f0ff] w-[70vw] max-w-[500px] aspect-square"
           >
             <svg
-              width="80"
-              height="80"
+              className="w-full h-full drop-shadow-[0_0_50px_rgba(0,128,255,0.6)] dark:drop-shadow-[0_0_50px_rgba(0,240,255,0.6)]"
               viewBox="0 0 100 100"
-              fill="none"
               stroke="#fff"
-              className="dark:stroke-black"
-              strokeWidth="6"
+              strokeWidth="4"
               strokeLinejoin="round"
               strokeLinecap="round"
             >
-              <polygon points="50,5 89,27.5 89,72.5 50,95 11,72.5 11,27.5" />
-              <polygon points="50,28 72,40.5 72,59.5 50,72 28,59.5 28,40.5" />
+              {/* Outer Hexagon - filled with blue */}
+              <polygon points="50,5 89,27.5 89,72.5 50,95 11,72.5 11,27.5" fill="currentColor" />
+              {/* Inner Hexagon - 'hole' matching the background color */}
+              <polygon points="50,28 72,40.5 72,59.5 50,72 28,59.5 28,40.5" fill="#050505" />
+              
+              {/* 3D Structure Lines */}
               <line x1="50" y1="5" x2="50" y2="28" />
               <line x1="89" y1="27.5" x2="72" y2="40.5" />
               <line x1="89" y1="72.5" x2="72" y2="59.5" />
