@@ -7,13 +7,8 @@ export const FlowHoverButton: React.FC<{
   icon?: React.ReactNode;
   children?: React.ReactNode;
   className?: string;
-  as?: React.ElementType;
-  href?: string;
-  target?: string;
-  rel?: string;
-  onClick?: React.MouseEventHandler<HTMLElement>;
-}> = ({ icon, children, className, as: Component = "button", ...props }) => (
-  <Component
+} & React.ButtonHTMLAttributes<HTMLButtonElement>> = ({ icon, children, className, ...props }) => (
+  <button
     className={cn(
       `relative cursor-pointer z-0 flex items-center justify-center gap-2 overflow-hidden rounded-full 
       border border-gray-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 
@@ -27,5 +22,5 @@ export const FlowHoverButton: React.FC<{
   >
     {icon}
     <span>{children}</span>
-  </Component>
+  </button>
 );
