@@ -101,17 +101,17 @@ export const CardItem = ({
   const [isMouseEntered] = useMouseEnter();
 
   useEffect(() => {
+    const handleAnimations = () => {
+      if (!ref.current) return;
+      if (isMouseEntered) {
+        ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px)`;
+      } else {
+        ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px)`;
+      }
+    };
+    
     handleAnimations();
-  }, [isMouseEntered]);
-
-  const handleAnimations = () => {
-    if (!ref.current) return;
-    if (isMouseEntered) {
-      ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px)`;
-    } else {
-      ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px)`;
-    }
-  };
+  }, [isMouseEntered, translateX, translateY, translateZ]);
 
   return (
     <Tag

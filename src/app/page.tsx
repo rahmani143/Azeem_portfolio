@@ -9,6 +9,7 @@ import { AchievementsSection } from "@/components/ui/achievements-section";
 import { SkillsSection } from "@/components/ui/skills-section";
 import { ScrollNav } from "@/components/ui/scroll-nav";
 import { ContactSection } from "@/components/ui/contact-section";
+import { CertificationsSection } from "@/components/ui/certifications-section";
 import { ScrollVideoBackground } from "@/components/ui/scroll-video-background";
 
 const allProjects = [
@@ -246,12 +247,26 @@ export default function Home() {
           </div>
         </section>
 
+        {/* CERTIFICATIONS SECTION (Translucent) */}
+        <section id="certifications" className="relative w-full py-32 bg-white/40 dark:bg-transparent backdrop-blur-2xl dark:backdrop-blur-none">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white font-mono">
+                <span className="text-[#0080ff] dark:text-[#00f0ff]">06.</span> Certifications
+              </h2>
+              <div className="h-px bg-gray-200 dark:bg-[#222] flex-grow ml-6"></div>
+            </div>
+
+            <CertificationsSection />
+          </div>
+        </section>
+
         {/* SKILLS SECTION (Solid) */}
         <section id="skills" className="relative w-full py-32 bg-white dark:bg-transparent">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white font-mono">
-                <span className="text-[#0080ff] dark:text-[#00f0ff]">06.</span> Skills & Technologies
+                <span className="text-[#0080ff] dark:text-[#00f0ff]">07.</span> Skills & Technologies
               </h2>
               <div className="h-px bg-gray-200 dark:bg-[#222] flex-grow ml-6"></div>
             </div>

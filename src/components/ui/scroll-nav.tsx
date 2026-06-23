@@ -10,8 +10,9 @@ const sections = [
   { id: "achievements", label: "03. Achievements" },
   { id: "career", label: "04. Career" },
   { id: "education", label: "05. Education" },
-  { id: "skills", label: "06. Skills" },
-  { id: "contact", label: "07. Contact" },
+  { id: "certifications", label: "06. Certifications" },
+  { id: "skills", label: "07. Skills" },
+  { id: "contact", label: "08. Contact" },
 ];
 
 export const ScrollNav = () => {
@@ -19,17 +20,19 @@ export const ScrollNav = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Use offsetTop instead of getBoundingClientRect for bulletproof tracking
-      // We check if the section's top is above the middle of the screen
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      // Find the center line of the screen relative to the whole document
+      const triggerLine = window.scrollY + window.innerHeight / 2;
       
       let current = sections[0].id;
       
       for (const s of sections) {
         const el = document.getElementById(s.id);
         if (el) {
-          // If the section's absolute top is less than our scroll position
-          if (el.offsetTop <= scrollPosition) {
+          // Calculate the true absolute top of the element relative to the document
+          const rect = el.getBoundingClientRect();
+          const absoluteTop = rect.top + window.scrollY;
+          
+          if (absoluteTop <= triggerLine) {
             current = s.id;
           }
         }
@@ -39,7 +42,7 @@ export const ScrollNav = () => {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    // Run after a short delay to ensure DOM is painted
+    // Trigger once on mount after a tiny delay
     setTimeout(handleScroll, 100);
 
     return () => window.removeEventListener("scroll", handleScroll);
@@ -53,7 +56,7 @@ export const ScrollNav = () => {
   };
 
   return (
-    <div className="fixed left-20 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col gap-4 pl-4">
+    <div className="fixed left-6 md:left-12 lg:left-20 top-1/2 -translate-y-1/2 z-[100] hidden md:flex flex-col gap-4 pl-4 pointer-events-auto">
       {sections.map(({ id, label }) => {
         const isActive = activeSection === id;
 
@@ -63,7 +66,7 @@ export const ScrollNav = () => {
             className="relative flex items-center group cursor-pointer" 
             onClick={() => handleClick(id)}
           >
-            {/* Diamond or Line Container */}
+            {/* Diamond Indicator */}
             <div className="relative flex items-center justify-center w-6 h-10">
               <motion.div
                 initial={false}
@@ -75,10 +78,10 @@ export const ScrollNav = () => {
                 }}
                 className={`transition-colors duration-300 ${
                   isActive 
-                    ? 'bg-[#0080ff] dark:bg-[#00f0ff] shadow-[0_0_10px_rgba(0,128,255,0.5)] dark:shadow-[0_0_10px_rgba(0,240,255,0.5)]' 
+                    ? 'bg-[#0080ff] dark:bg-[#00f0ff] shadow-[0_0_12px_rgba(0,128,255,0.8)] dark:shadow-[0_0_12px_rgba(0,240,255,0.8)]' 
                     : 'bg-gray-300 dark:bg-gray-600 group-hover:bg-gray-500 dark:group-hover:bg-gray-400'
                 }`}
-                transition={{ duration: 0.4, ease: "backOut" }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
               />
             </div>
             
@@ -91,7 +94,7 @@ export const ScrollNav = () => {
                 filter: isActive ? "blur(0px)" : "blur(4px)"
               }}
               transition={{ duration: 0.3 }}
-              className={`absolute left-10 whitespace-nowrap text-xs font-mono font-bold tracking-widest pointer-events-none ${
+              className={`absolute left-10 whitespace-nowrap text-[10px] lg:text-xs font-mono font-bold tracking-widest pointer-events-none ${
                 isActive ? 'text-[#0080ff] dark:text-[#00f0ff]' : 'text-transparent'
               }`}
             >
