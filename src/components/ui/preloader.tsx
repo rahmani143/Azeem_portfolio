@@ -36,43 +36,37 @@ export const Preloader = () => {
           exit={{ opacity: 0, scale: 1.1, filter: "blur(10px)" }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#050505]"
-        >
           {/* Rotating Logo Container */}
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 4, ease: "linear", repeat: Infinity }}
-            className="relative flex items-center justify-center text-[#0080ff] dark:text-[#00f0ff] w-[70vw] max-w-[500px] aspect-square"
+            className="absolute flex items-center justify-center w-[70vw] max-w-[500px] aspect-square"
           >
             <svg
               className="w-full h-full drop-shadow-[0_0_50px_rgba(0,128,255,0.6)] dark:drop-shadow-[0_0_50px_rgba(0,240,255,0.6)]"
               viewBox="0 0 100 100"
-              stroke="#fff"
-              strokeWidth="4"
-              strokeLinejoin="round"
-              strokeLinecap="round"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              {/* Outer Hexagon - filled with blue */}
-              <polygon points="50,5 89,27.5 89,72.5 50,95 11,72.5 11,27.5" fill="currentColor" />
-              {/* Inner Hexagon - 'hole' matching the background color */}
-              <polygon points="50,28 72,40.5 72,59.5 50,72 28,59.5 28,40.5" fill="#050505" />
-              
-              {/* 3D Structure Lines */}
-              <line x1="50" y1="5" x2="50" y2="28" />
-              <line x1="89" y1="27.5" x2="72" y2="40.5" />
-              <line x1="89" y1="72.5" x2="72" y2="59.5" />
-              <line x1="50" y1="95" x2="50" y2="72" />
-              <line x1="11" y1="72.5" x2="28" y2="59.5" />
-              <line x1="11" y1="27.5" x2="28" y2="40.5" />
+              <path d="M47.5 4.44337C49.047 3.55021 50.953 3.55021 52.5 4.44338L87.3372 24.5566C88.8842 25.4498 89.8372 27.1004 89.8372 28.8868V69.1132C89.8372 70.8996 88.8842 72.5502 87.3372 73.4434L52.5 93.5566C50.953 94.4498 49.047 94.4498 47.5 93.5566L12.6628 73.4434C11.1158 72.5502 10.1628 70.8996 10.1628 69.1132V28.8867C10.1628 27.1004 11.1158 25.4498 12.6628 24.5566L47.5 4.44337Z" fill="currentColor" className="text-[#0080ff] dark:text-[#00f0ff]"/>
+              <path d="M50.2 13L81.4 31V67L50.2 85L19 67V31L50.2 13Z" stroke="white" className="dark:stroke-black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M50.2 31.4L67.8 41.4V56.6L50.2 66.6L32.6 56.6V41.4L50.2 31.4Z" stroke="white" className="dark:stroke-black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M50.2 13V31.4" stroke="white" className="dark:stroke-black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M81.4 31L67.8 41.4" stroke="white" className="dark:stroke-black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M81.4 67L67.8 56.6" stroke="white" className="dark:stroke-black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M50.2 85V66.6" stroke="white" className="dark:stroke-black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M19 67L32.6 56.6" stroke="white" className="dark:stroke-black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M19 31L32.6 41.4" stroke="white" className="dark:stroke-black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </motion.div>
           
-          {/* Subtle loading text (optional, but looks premium) */}
+          {/* Centered text over the spinning logo */}
           <motion.div 
-            animate={{ opacity: [0.3, 1, 0.3] }}
+            animate={{ opacity: [0.4, 1, 0.4] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute bottom-12 font-mono text-sm tracking-[0.3em] text-[#0080ff] dark:text-[#00f0ff] uppercase"
+            className="relative z-10 font-mono text-sm md:text-xl font-bold tracking-[0.4em] text-white dark:text-black uppercase drop-shadow-md"
           >
-            Initializing
+            INITIALIZATION
           </motion.div>
         </motion.div>
       )}
